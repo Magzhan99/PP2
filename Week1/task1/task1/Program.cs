@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,14 @@ namespace task1
             GPA = 3; 
         }
 
+        public Student(string fname, string surname,int age, float gpa)
+        {
+            this.fname = fname;
+            lname = surname;
+            this.age = age;
+            GPA = gpa;
+        }
+
         public override string ToString()
         {
             return fname + " " + lname + " " + age + " " + GPA;
@@ -37,10 +45,10 @@ namespace task1
             s.GPA = 4;
 
 
-            Student s2 = new Student();
-            Console.WriteLine(s);      // magzhan kadylbekov 18 4 
-            Console.WriteLine(s2);     // magzhan kadylbekov 18 3
-
+            Student s2 = new Student("KBTU", "FIT", 19, 3.5);
+            Console.WriteLine(s);      //magzhan kadylbekov 18 4 
+            Console.WriteLine(s2);     //magzhan kadylbekov 18 3
+            
             Console.ReadKey();
         }
     }
