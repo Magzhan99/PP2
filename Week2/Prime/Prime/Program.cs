@@ -9,39 +9,41 @@ namespace MaxMin
 {
     class Program
     {
-        static void Primess(int a)
+        static int Primess(int a)
         {
-            int ok = 1;
             for (int i = 2; i <= Math.Sqrt(a); i++)
             {
                 if (a % i == 0)
-                    ok = 0;
+                    return 0;
             }
-            if (ok == 1)
-            {
-                Console.Write(a);
-            }
+            return 1;
         }
 
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"C:\users\user\desktop\just\папка2\файл2.1.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
+            FileStream f1  = new FileStream(@"C:\users\user\desktop\just\папка2\read.txt", FileMode.Open, FileAccess.Read);
+            StreamReader s1 = new StreamReader(f1);
 
-            string s = sr.ReadLine();
+            string s = s1.ReadLine();
 
             Console.WriteLine(s);
 
             string[] numbers = s.Split(' ');
-            
+            int mini = int.Parse(numbers[0]);
 
             for(int i = 0; i < numbers.Length; i++)
             {
-                int x = int.Parse(numbers[i]);
-                Primess(x);
+                int t = int.Parse(numbers[i]);
+                if (t < mini && Primess(t)==1)
+                {
+                    mini = t;
+                }
             }
-            Console.WriteLine(numbers);
-            Console.ReadKey();
+            FileStream f2 = new FileStream(@"C:\Users\user\Desktop\just\папка2\write.txt", FileMode.Open , FileAccess.Write);
+            StreamWriter s2 = new StreamWriter(f2);
+            s2.WriteLine(mini);
+
+            s2.Close();
         }
 
     }
