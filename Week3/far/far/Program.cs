@@ -36,6 +36,7 @@ namespace SimpleFarManager
             while (true)
             {
                 Console.Clear();
+
                 showState(dir, pos);
 
                 ConsoleKeyInfo btn = Console.ReadKey();
@@ -44,7 +45,7 @@ namespace SimpleFarManager
                     case ConsoleKey.UpArrow:
                         pos--;
                         if (pos < 0)
-                            pos = dir.GetFileSystemInfos().Length - 1;
+                            pos = dir.GetFileSystemInfos().Length - 1; //
                         break;
                     case ConsoleKey.DownArrow:
                         pos++;
