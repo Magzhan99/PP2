@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +13,18 @@ namespace snake1step
         {
             Console.CursorVisible = false;
             Console.SetWindowSize(85, 35);
+
             Snake snake = new Snake();
-                Food food = new Food();
+            Food food = new Food();
             Wall wall = new Wall();
 
+            int score = 0;
 
             while (true)
             {
-                Console.Clear();
                 snake.Draw();
                 food.Draw();
                 wall.Draw();
-
 
                 ConsoleKeyInfo button = Console.ReadKey();
                 switch (button.Key)
@@ -41,6 +42,7 @@ namespace snake1step
                         snake.Move(1, 0);
                         break;
                 }
+                wall.ScoreWallDraw();
 
                 if (snake.body[0].x < 0)
                     snake.body[0].x = 69;
@@ -54,21 +56,24 @@ namespace snake1step
                 if (snake.Eat(food))
                 {
                     food.SetRandomPos();
+                    score += 5;
+                    Console.SetCursorPosition(0, 33);
+                    Console.WriteLine("Score: " + score);
                 }
 
-                if (snake.Die1(wall) == false)
-                {
-                    Console.SetCursorPosition(70, 33);
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Game Over!!!");
-                    Console.ReadKey();
-                    return;
+
+                if(food.IsOnTheWall(wall) == false || food.IsOnTheSnake(snake) == false) // if wall and food in one place 
+                {                                                                        // if snake and food in one place 
+                    food.SetRandomPos();
                 }
-                if(snake.Die2() == false)
+
+                if (snake.Die1(wall) == false || snake.Die2() == false) //  colision with itself or with wall 
                 {
-                    Console.SetCursorPosition(70, 35);
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Game Over!!!");
+                    FileStream fs = new FileStream(@"GAME OVER.txt", FileMode.Open, FileAccess.Read);
+                    StreamReader sr = new StreamReader(fs);
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(sr.ReadToEnd());
                     Console.ReadKey();
                     return;
                 }

@@ -13,11 +13,11 @@ namespace snake1step
         public ConsoleColor color;
         public Snake()
         {
-            sign = 'o';
+            sign = '*';
             body = new List<Point>();
-            body.Add(new Point(10, 10));
-            body.Add(new Point(11, 10));
             body.Add(new Point(12, 10));
+            body.Add(new Point(11, 10));
+            body.Add(new Point(10, 10));
 
             color = ConsoleColor.DarkGreen;
         }
@@ -40,6 +40,10 @@ namespace snake1step
 
         public void Move(int dx, int dy)
         {
+            Console.SetCursorPosition(body[body.Count-1].x, body[body.Count - 1].y);
+            Console.Write(' ');                                                          // without clear function 
+
+
             for (int i = body.Count - 1; i > 0; i--)
             {
                 body[i].x = body[i - 1].x;

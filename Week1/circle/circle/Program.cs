@@ -49,7 +49,8 @@ namespace circle
             s.findLength();
             s.findDiametr();
 
-            Console.WriteLine(s	);
+            string q= s.ToString(); 
+            Console.WriteLine(q);
 
             Console.ReadKey();
 

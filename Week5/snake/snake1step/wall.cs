@@ -19,7 +19,7 @@ namespace snake1step
             color = ConsoleColor.DarkYellow;
 
             body = new List<Point>();
-            Level(2);
+            Level(3);
         }
 
 
@@ -57,7 +57,29 @@ namespace snake1step
                 Console.Write(sign);
             }
 
+        } 
+
+        public void ScoreWallDraw()
+        {
+            List<Point> score;
+            score = new List<Point>();
+            for (int j = 0; j < 11; j++)
+            {
+                score.Add(new Point(j, 32));
+                score.Add(new Point(j, 34));
+            }
+            for (int j = 32; j < 35; j++)
+                score.Add(new Point(11, j));
+
+            int i = 0;
+            foreach (Point p in score)
+            {
+                Console.SetCursorPosition(p.x, p.y);
+                Console.Write('.');
+                i++;
+            }
         }
+
 
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complexx", "Complexx\Complexx.csproj", "{232593F2-4949-494D-BFFD-D336CA7926A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complex_numbers", "Complex_numbers\Complex_numbers.csproj", "{2A21E5F4-4717-4DA3-A596-6C14BE833017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{232593F2-4949-494D-BFFD-D336CA7926A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{232593F2-4949-494D-BFFD-D336CA7926A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{232593F2-4949-494D-BFFD-D336CA7926A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{232593F2-4949-494D-BFFD-D336CA7926A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A21E5F4-4717-4DA3-A596-6C14BE833017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A21E5F4-4717-4DA3-A596-6C14BE833017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A21E5F4-4717-4DA3-A596-6C14BE833017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A21E5F4-4717-4DA3-A596-6C14BE833017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7B4FB830-0942-4313-9DBF-36CFB5F78949}
+		SolutionGuid = {1D9FE8F1-DC93-40D7-9C1D-D77411C367C5}
 	EndGlobalSection
 EndGlobal

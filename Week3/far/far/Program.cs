@@ -11,19 +11,22 @@ namespace SimpleFarManager
     class Program
     {
 
-        static void showState(DirectoryInfo cur, int pos)
+        static void ShowState(DirectoryInfo cursor, int position)
         {
-            FileSystemInfo[] infos = cur.GetFileSystemInfos();
+            FileSystemInfo[] infos = cursor.GetFileSystemInfos();
+            for(int i = 0; i < infos.Length; i++)
+            {
+                if (i == position)
+                    Console.BackgroundColor = ConsoleColor.White;
+                else
+                    Console.BackgroundColor = ConsoleColor.Black;
 
-            for (int i = 0; i < infos.Length; i++)
-            { 
-                Console.BackgroundColor = i == pos ? ConsoleColor.White : ConsoleColor.Black;
-                Console.ForegroundColor = infos[i].GetType() == typeof(DirectoryInfo) ? ConsoleColor.Magenta : ConsoleColor.Green;
-
+                if (infos[i].GetType() == typeof(DirectoryInfo))
+                    Console.ForegroundColor = ConsoleColor.Green;
+                else
+                    Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(infos[i].Name);
             }
-
-
         }
 
         static void Main(string[] args)
@@ -35,21 +38,21 @@ namespace SimpleFarManager
 
             while (true)
             {
+                Console.CursorVisible = false;
                 Console.Clear();
+                ShowState(dir, pos);
 
-                showState(dir, pos);
-
-                ConsoleKeyInfo btn = Console.ReadKey();
-                switch (btn.Key)
+                ConsoleKeyInfo button = Console.ReadKey();
+                switch (button.Key)
                 {
                     case ConsoleKey.UpArrow:
                         pos--;
                         if (pos < 0)
-                            pos = dir.GetFileSystemInfos().Length - 1; //
+                            pos = dir.GetFileSystemInfos().Length - 1;
                         break;
                     case ConsoleKey.DownArrow:
                         pos++;
-                        if (pos >= dir.GetFileSystemInfos().Length)
+                        if (pos > dir.GetFileSystemInfos().Length)
                             pos = 0;
                         break;
                     case ConsoleKey.Enter:
@@ -61,13 +64,20 @@ namespace SimpleFarManager
                         }
                         else
                         {
-                            Process.Start(f.FullName);
-                        }
+                            FileStream g = new FileStream(f.FullName, FileMode.Open, FileAccess.Read);
+                            StreamReader s = new StreamReader(g);
+
+                            Console.Clear();
+                            Console.WriteLine(s.ReadToEnd());   
+                            
+                            
+                        }    
                         break;
                     case ConsoleKey.Escape:
                         dir = dir.Parent;
                         break;
                 }
+
             }
         }
     }

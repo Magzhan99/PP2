@@ -18,12 +18,12 @@ namespace prime_numbers
                 int ok = 1;
                 for (int j = 2; j <= Math.Sqrt(a); j++)
                 {
-                    if(a % j == 0)
+                    if (a % j == 0)
                     {
                         ok = 0;
                     }
                 }
-                if(ok == 1)
+                if (ok == 1)
                 {
                     Console.WriteLine(a);
                     ok = 1;
