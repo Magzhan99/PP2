@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace snake1step
+namespace SnakeByThread 
 {
     class Food
     {
@@ -42,7 +42,6 @@ namespace snake1step
                     return false;
             return true;
         }
-
         public bool IsOnTheSnake(Snake s)
         {
             for (int i = 1; i < s.body.Count; i++)

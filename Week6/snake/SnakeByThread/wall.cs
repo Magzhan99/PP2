@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace snake1step
+namespace SnakeByThread 
 {
     class Wall
     {
@@ -19,7 +19,7 @@ namespace snake1step
             color = ConsoleColor.DarkYellow;
 
             body = new List<Point>();
-            Level(5);
+            Level(1);
         }
 
 
@@ -57,7 +57,7 @@ namespace snake1step
                 Console.Write(sign);
             }
 
-        } 
+        }
 
         public void ScoreWallDraw()
         {
@@ -65,17 +65,18 @@ namespace snake1step
             score = new List<Point>();
             for (int j = 0; j < 11; j++)
             {
-                score.Add(new Point(j, 32));
-                score.Add(new Point(j, 34));
+                score.Add(new Point(j, 23));
+                score.Add(new Point(j, 25));
             }
-            for (int j = 32; j < 35; j++)
+            for (int j = 23; j < 26; j++)
                 score.Add(new Point(11, j));
 
-
+            int i = 0;
             foreach (Point p in score)
             {
                 Console.SetCursorPosition(p.x, p.y);
                 Console.Write('.');
+                i++;
             }
         }
 

@@ -68,10 +68,14 @@ namespace SimpleFarManager
                             StreamReader s = new StreamReader(g);
 
                             Console.Clear();
-                            Console.WriteLine(s.ReadToEnd());   
-                            
-                            
-                        }    
+                            Console.WriteLine(s.ReadToEnd());
+                            ConsoleKeyInfo knopka = Console.ReadKey();
+
+                            while (knopka.Key != ConsoleKey.Q)
+                            {
+                                knopka = Console.ReadKey();
+                            }
+                        }
                         break;
                     case ConsoleKey.Escape:
                         dir = dir.Parent;

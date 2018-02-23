@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace Complex_numbers
 {
@@ -19,7 +22,7 @@ namespace Complex_numbers
             Complex a = new Complex(a_, b_);
             Complex b = new Complex(c_, d_);
             Complex res = a + b;
-            Console.WriteLine(res);
+            Console.WriteLine(res.ToString());
             Console.ReadKey();
         }
     }

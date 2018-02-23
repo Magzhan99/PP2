@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace snake1step
 {
     class Program
     {
+        public static int direction = 1; 
+
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
@@ -17,10 +20,34 @@ namespace snake1step
             Snake snake = new Snake();
             Food food = new Food();
             Wall wall = new Wall();
-
             int score = 0;
+            void Thread(object state)
+            {
 
-            while (true)
+                while (!snake.Die1(wall) || !snake.Die2())
+                {
+                    switch (direction)
+                    {
+                        case 1:
+                            snake.Move(1, 0);
+                            break;
+                        case 2:
+                            snake.Move(0, 1);
+                            break;
+                        case 3:
+                            snake.Move(-1, 0);
+                            break;
+                        case 4:
+                            snake.Move(0, -1);
+                            break;
+                    }
+                }
+            }
+
+            Thread t = new Thread(Thread);
+            t.Start();
+
+            while (!snake.Die1(wall) || !snake.Die2())
             {
                 snake.Draw();
                 food.Draw();
@@ -30,16 +57,16 @@ namespace snake1step
                 switch (button.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        snake.Move(0, -1);
+                        direction = 4;
                         break;
                     case ConsoleKey.DownArrow:
-                        snake.Move(0, 1);
+                        direction = 2;
                         break;
                     case ConsoleKey.LeftArrow:
-                        snake.Move(-1, 0);
+                        direction = 3;
                         break;
                     case ConsoleKey.RightArrow:
-                        snake.Move(1, 0);
+                        direction = 1;
                         break;
                 }
                 wall.ScoreWallDraw();

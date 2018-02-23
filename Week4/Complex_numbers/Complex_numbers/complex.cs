@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Complex_numbers
 {
+    [Serializable]
     public class Complex
     {
         int p, t;
+        
+        public Complex()
+        {
+
+        }
         public Complex(int a, int b)
         {
             p = a;
