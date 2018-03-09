@@ -49,8 +49,12 @@ namespace Complex_numbers
         {
             if (t == 1)
                 return p + "";
+            else if (t == p)
+                return "1";
+            else if (p % t == 0)
+                return "p / t";
             else
-                return p + "/" + t;
+                return p / GCD(p, t) + "/" + t / GCD(p, t);
         }
     }
 }

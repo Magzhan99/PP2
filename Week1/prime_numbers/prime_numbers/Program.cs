@@ -10,7 +10,7 @@ namespace prime_numbers
     {
         static void Main(string[] args)
         {
-            string n = Console.ReadLine();
+            /*string n = Console.ReadLine();
             args = n.Split(' ');
             foreach (string t in args)
             {
@@ -28,7 +28,10 @@ namespace prime_numbers
                     Console.WriteLine(a);
                     ok = 1;
                 }
-            }
+            }*/
+            double a;
+            a = Math.Cos(60 * Math.PI / 180); 
+            Console.WriteLine(a);
             Console.ReadKey();
         }
     }

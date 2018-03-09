@@ -5,24 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SnakeByThread 
-{
+namespace Snake
+{[Serializable]
     class Wall
     {
         public List<Point> body;
-        public char sign;
+        public string sign;
         public ConsoleColor color;
-
-        public Wall()
-        {
-            sign = '#';
-            color = ConsoleColor.DarkYellow;
-
-            body = new List<Point>();
-            Level(1);
-        }
-
-
         public void Level(int a)
         {
             string path = string.Format(@"levels\level{0}.txt", a);
@@ -47,39 +36,22 @@ namespace SnakeByThread
             }
         }
 
+        public Wall(int level)
+        {
+            body = new List<Point>();
+            sign = "o";
+            color = ConsoleColor.Blue;
+            Level(level);
+        }
+
         public void Draw()
         {
             Console.ForegroundColor = color;
-
             foreach (Point p in body)
             {
                 Console.SetCursorPosition(p.x, p.y);
                 Console.Write(sign);
             }
-
         }
-
-        public void ScoreWallDraw()
-        {
-            List<Point> score;
-            score = new List<Point>();
-            for (int j = 0; j < 11; j++)
-            {
-                score.Add(new Point(j, 23));
-                score.Add(new Point(j, 25));
-            }
-            for (int j = 23; j < 26; j++)
-                score.Add(new Point(11, j));
-
-            int i = 0;
-            foreach (Point p in score)
-            {
-                Console.SetCursorPosition(p.x, p.y);
-                Console.Write('.');
-                i++;
-            }
-        }
-
-
     }
 }

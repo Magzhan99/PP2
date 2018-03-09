@@ -14,35 +14,49 @@ namespace Complex_numbers
     {
         static void F1(Complex w)
         {
-            BinaryFormatter bn = new BinaryFormatter(); 
-            FileStream fs = new FileStream("data.txt", FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream(@"data.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            BinaryFormatter bn = new BinaryFormatter();
             bn.Serialize(fs, w);
             fs.Close();
+            /*try
+            {
+                bn.Serialize(fs, w);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                fs.Close();
+            }*/
         }
 
         static void F2()
         {
+            FileStream fs = new FileStream(@"data.txt", FileMode.Open, FileAccess.Read);
             BinaryFormatter bn = new BinaryFormatter();
-            FileStream fs = new FileStream("data.txt", FileMode.Open, FileAccess.Read);
-            Complex res = bn.Deserialize(fs) as Complex;
+            Complex res =  bn.Deserialize(fs) as Complex;
+            Console.WriteLine(res);
             fs.Close();
-            Console.WriteLine("vot tebe : " + res);
+    
         }
 
         static void F3(Complex w)
         {
+            FileStream ff = new FileStream(@"maga.txt", FileMode.Create, FileAccess.Write);
             XmlSerializer xx = new XmlSerializer(typeof(Complex));
-            FileStream ff = new FileStream("maga.xml", FileMode.Create, FileAccess.Write);
             xx.Serialize(ff, w);
             ff.Close();
+
         }
         static void F4()
         {
+            FileStream ff = new FileStream(@"maga.xml", FileMode.Open, FileAccess.Read);
             XmlSerializer xx = new XmlSerializer(typeof(Complex));
-            FileStream ff = new FileStream("maga.xml", FileMode.Open, FileAccess.Read);
             Complex total = xx.Deserialize(ff) as Complex;
             ff.Close();
-            Console.WriteLine("vot vam:" + total);
+            Console.WriteLine(total);
         }
 
         static void Main(string[] args)

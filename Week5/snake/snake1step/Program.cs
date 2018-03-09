@@ -10,8 +10,6 @@ namespace snake1step
 {
     class Program
     {
-        public static int direction = 1; 
-
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
@@ -21,33 +19,8 @@ namespace snake1step
             Food food = new Food();
             Wall wall = new Wall();
             int score = 0;
-            void Thread(object state)
-            {
 
-                while (!snake.Die1(wall) || !snake.Die2())
-                {
-                    switch (direction)
-                    {
-                        case 1:
-                            snake.Move(1, 0);
-                            break;
-                        case 2:
-                            snake.Move(0, 1);
-                            break;
-                        case 3:
-                            snake.Move(-1, 0);
-                            break;
-                        case 4:
-                            snake.Move(0, -1);
-                            break;
-                    }
-                }
-            }
-
-            Thread t = new Thread(Thread);
-            t.Start();
-
-            while (!snake.Die1(wall) || !snake.Die2())
+            while (true)
             {
                 snake.Draw();
                 food.Draw();
@@ -57,16 +30,16 @@ namespace snake1step
                 switch (button.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        direction = 4;
+                        snake.Move(0, -1);
                         break;
                     case ConsoleKey.DownArrow:
-                        direction = 2;
+                        snake.Move(0, 1);
                         break;
                     case ConsoleKey.LeftArrow:
-                        direction = 3;
+                        snake.Move(-1, 0);
                         break;
                     case ConsoleKey.RightArrow:
-                        direction = 1;
+                        snake.Move(1, 0);
                         break;
                 }
                 wall.ScoreWallDraw();
