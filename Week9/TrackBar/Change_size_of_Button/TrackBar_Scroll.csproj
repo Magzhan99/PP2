@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}</ProjectGuid>
+    <ProjectGuid>{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>maga</RootNamespace>
-    <AssemblyName>maga</AssemblyName>
+    <RootNamespace>Change_size_of_Button</RootNamespace>
+    <AssemblyName>Change_size_of_Button</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

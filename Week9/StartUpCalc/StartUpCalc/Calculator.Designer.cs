@@ -1,6 +1,6 @@
 ﻿namespace StartUpCalc
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -199,7 +199,7 @@
             this.factorial.Name = "factorial";
             this.factorial.Size = new System.Drawing.Size(44, 36);
             this.factorial.TabIndex = 13;
-            this.factorial.Text = "!";
+            this.factorial.Text = "n!";
             this.factorial.UseVisualStyleBackColor = true;
             this.factorial.Click += new System.EventHandler(this.operation_click);
             // 
@@ -219,7 +219,7 @@
             this.root.Name = "root";
             this.root.Size = new System.Drawing.Size(44, 36);
             this.root.TabIndex = 17;
-            this.root.Text = "--/```";
+            this.root.Text = "x^1/2";
             this.root.UseVisualStyleBackColor = true;
             this.root.Click += new System.EventHandler(this.operation_click);
             // 
@@ -249,7 +249,7 @@
             this.power.Name = "power";
             this.power.Size = new System.Drawing.Size(44, 36);
             this.power.TabIndex = 22;
-            this.power.Text = "^";
+            this.power.Text = "x^y";
             this.power.UseVisualStyleBackColor = true;
             this.power.Click += new System.EventHandler(this.operation_click);
             // 
@@ -329,7 +329,7 @@
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(44, 36);
             this.multiply.TabIndex = 32;
-            this.multiply.Text = "x";
+            this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = true;
             this.multiply.Click += new System.EventHandler(this.operation_click);
             // 
@@ -391,7 +391,7 @@
             this.equal.TabIndex = 38;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = true;
-            this.equal.Click += new System.EventHandler(this.result_click);
+            this.equal.Click += new System.EventHandler(this.Equal_click);
             // 
             // zero
             // 
@@ -424,7 +424,7 @@
             this.ThirdDegree.UseVisualStyleBackColor = true;
             this.ThirdDegree.Click += new System.EventHandler(this.operation_click);
             // 
-            // Form1
+            // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -465,7 +465,7 @@
             this.Controls.Add(this.sinus);
             this.Controls.Add(this.MS);
             this.Controls.Add(this.Input);
-            this.Name = "Form1";
+            this.Name = "Calculator";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.numbers_click);

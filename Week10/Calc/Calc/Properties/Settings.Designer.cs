@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace maga.Properties
+namespace Calc.Properties
 {
 
 

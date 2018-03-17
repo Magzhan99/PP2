@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace StartUpCalc
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
         double first_number, second_number, res, memory;
         string symbol;
-        public Form1()
+        int initial = 0;
+        public Calculator()
         {
             InitializeComponent();
         }
@@ -22,12 +23,13 @@ namespace StartUpCalc
         private void Form1_Load(object sender, EventArgs e)
         {
             Input.TextAlign = HorizontalAlignment.Right;
+            Input.Text = initial.ToString();
         }
 
         private void MS_Click(object sender, EventArgs e)
         {
             memory = double.Parse(Input.Text);
-            Input.Text = "";
+            Input.Text = initial.ToString();
         }
 
         private void memory_read(object sender, EventArgs e)
@@ -48,6 +50,7 @@ namespace StartUpCalc
         private void memory_clear(object sender, EventArgs e)
         {
             memory = 0;
+            Input.Text = initial.ToString();
         }
 
         private void numbers_click(object sender, EventArgs e)
@@ -63,15 +66,17 @@ namespace StartUpCalc
                 first_number = double.Parse(Input.Text);
             else
                 first_number = 0;
-            symbol = btn.Text;
+            symbol = btn.Text;         //type of operation
             if (btn.Text != "ln" && btn.Text != "log" && btn.Text != "sin" && btn.Text != "cos" && btn.Text != "tan")
-                Input.Text = "";
+                Input.Text = initial.ToString();
             else
                 Input.Text = symbol;
         }
-        private void result_click(object sender, EventArgs e)
+        int cnt = 0;
+        private void Equal_click(object sender, EventArgs e)
         {
-            if (symbol != "x^1/3" && symbol != "--/```" && symbol != "!" && symbol != "log" && symbol != "ln" && symbol != "cos" && symbol != "sin" && symbol != "tan")
+            cnt++;
+            if (symbol != "x^1/3" && symbol != "x^1/2" && symbol != "n!" && symbol != "log" && symbol != "ln" && symbol != "cos" && symbol != "sin" && symbol != "tan")
                 second_number = double.Parse(Input.Text);
             else
                 second_number = 0;
@@ -86,10 +91,10 @@ namespace StartUpCalc
                 case "/":
                     res = first_number / second_number;
                     break;
-                case "x":
+                case "*":
                     res = first_number * second_number;
                     break;
-                case "^":
+                case "x^y":
                     res = Math.Pow(first_number, second_number);                   
                     break;
                 case "x^1/y":
@@ -101,10 +106,10 @@ namespace StartUpCalc
                 case "%":
                     res = first_number * second_number / 100;
                     break;
-                case "--/```":
+                case "x^1/2":
                     res = Math.Sqrt(first_number);
                     break;
-                case "!":
+                case "n!":
                     res = 1;
                     if (first_number > 0)
                     {
@@ -175,7 +180,7 @@ namespace StartUpCalc
 
         private void clear_click(object sender, EventArgs e)
         {
-            Input.Text = "";
+            Input.Text = initial.ToString(); ;
             first_number = 0;
             second_number = 0;
             res = 0;

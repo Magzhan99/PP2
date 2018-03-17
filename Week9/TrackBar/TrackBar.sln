@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "maga", "maga\maga.csproj", "{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackBar_Scroll", "Change_size_of_Button\TrackBar_Scroll.csproj", "{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65EDA852-4C08-46B6-A3A1-741CE2AC36FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AF7BAC-8A73-4B2A-AC1C-8D67FAC40B5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D88A9F95-D77B-4B90-A643-D4D6E69FA208}
+		SolutionGuid = {E207D667-A50C-4E76-9C58-5CD9D2E05A5D}
 	EndGlobalSection
 EndGlobal
