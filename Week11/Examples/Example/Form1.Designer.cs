@@ -1,4 +1,4 @@
-﻿namespace Spiral
+﻿namespace Example
 {
     partial class Form1
     {
@@ -28,36 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btn = new System.Windows.Forms.Button();
-            this.tr = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn
             // 
-            this.btn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn.Location = new System.Drawing.Point(0, 1);
+            this.btn.Location = new System.Drawing.Point(210, 240);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(30, 30);
+            this.btn.Size = new System.Drawing.Size(75, 23);
             this.btn.TabIndex = 0;
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.Button_Click);
-            // 
-            // tr
-            // 
-            this.tr.Interval = 50;
-            this.tr.Tick += new System.EventHandler(this.tr_Tick);
+            this.btn.Text = "Draw";
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 469);
+            this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.btn);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.ResumeLayout(false);
 
         }
@@ -65,7 +57,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Timer tr;
     }
 }
 

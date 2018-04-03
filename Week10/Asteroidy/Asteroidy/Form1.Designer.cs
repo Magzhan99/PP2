@@ -1,4 +1,4 @@
-﻿namespace Spiral
+﻿namespace Asteroidy
 {
     partial class Form1
     {
@@ -35,29 +35,30 @@
             // 
             // btn
             // 
-            this.btn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn.Location = new System.Drawing.Point(0, 1);
+            this.btn.Location = new System.Drawing.Point(200, 505);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(30, 30);
+            this.btn.Size = new System.Drawing.Size(90, 10);
             this.btn.TabIndex = 0;
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.Button_Click);
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // tr
             // 
+            this.tr.Enabled = true;
             this.tr.Interval = 50;
-            this.tr.Tick += new System.EventHandler(this.tr_Tick);
+            this.tr.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 469);
+            this.ClientSize = new System.Drawing.Size(534, 520);
             this.Controls.Add(this.btn);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }

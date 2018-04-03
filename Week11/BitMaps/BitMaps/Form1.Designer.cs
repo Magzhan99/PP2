@@ -1,4 +1,4 @@
-﻿namespace Spiral
+﻿namespace BitMaps
 {
     partial class Form1
     {
@@ -28,44 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.btn = new System.Windows.Forms.Button();
-            this.tr = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn
+            // pictureBox1
             // 
-            this.btn.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn.Location = new System.Drawing.Point(0, 1);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(30, 30);
-            this.btn.TabIndex = 0;
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.Button_Click);
-            // 
-            // tr
-            // 
-            this.tr.Interval = 50;
-            this.tr.Tick += new System.EventHandler(this.tr_Tick);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(809, 450);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 469);
-            this.Controls.Add(this.btn);
+            this.ClientSize = new System.Drawing.Size(953, 474);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Timer tr;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

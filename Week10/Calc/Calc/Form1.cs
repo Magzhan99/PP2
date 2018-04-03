@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Runtime.Serialization.Formatters.Binary; // finish Numbers_click when there is "fact, sqr, cube"
+using System.Text;                                    // finish Del_click when there is "fact, sqr, cube"
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +16,7 @@ namespace Calc
     {
         int i = 0, o = 0;
         double memory = 0, first_number = 0, second_number = 0, res = 0, res2 = 0, res3 = 0;
+        string[] str1, str2;
         string operation, operation2;
         public Calculator()
         {
@@ -23,44 +26,128 @@ namespace Calc
         {
             Input.Text = 0 + "";
         }
-
         private void numbers_click(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
             i++;
-            Button btn = sender as Button;
-            if (i == 1 )
+            if(i == 1)
             {
-                Input.Text = btn.Text;
+                if (!label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("fact") && !label.Text.Contains("cube") && !label.Text.Contains("log") && !label.Text.Contains("reciproc") && !label.Text.Contains("cuberoot") && !label.Text.Contains("ln"))
+                {
+                    Input.Text = btn.Text;
+                    label.Text += btn.Text;
+                }
+                else
+                {
+                    Input.Text = btn.Text;
+                    label.Text = btn.Text;
+                }
             }
             else
             {
-                Input.Text = Input.Text + btn.Text;
+                if (Input.Text == "0" && Input.Text.Contains('.') == false)
+                {
+                    Input.Text = btn.Text;
+                    label.Text += btn.Text;
+                }
+                else
+                {
+                    Input.Text += btn.Text;
+                    label.Text += btn.Text;
+                }
             }
-            label.Text += btn.Text;
         }
-        
-        private void Operation_with_Equal(object sender, EventArgs e) // NUMBER then NUMBER then EQUAL
+        private void Zero_click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            first_number = double.Parse(Input.Text);
-            label.Text = first_number.ToString();
-            Input.Text = "0";
-            if (btn.Text == "x^y")
+            if (Input.Text != "0")
             {
-                label.Text = label.Text + " " + "^" + " ";
+                if (i != 0)
+                {
+                    Input.Text += "0";
+                    label.Text += "0";
+                }
             }
-            else if(btn.Text == "x^1/y")
+            if (Input.Text != "0" && label.Text == "")
             {
-                label.Text = label.Text + " " + "y_root" + " ";
+                Input.Text = "0";
             }
-            else
+            if (Input.Text != "0" && label.Text != "")
             {
-                label.Text = label.Text + " " + btn.Text + " ";
+                if (i == 0)
+                {
+                    label.Text = "";
+                    Input.Text = "0";
+                }
             }
-            operation = btn.Text;
-            i = 0;
         }
 
+        private void Operation_with_Equal(object sender, EventArgs e) //NUMBER then NUMBER then EQUAL
+        {
+            Button btn = sender as Button;
+            str1 = label.Text.Split(' ');
+            if (str1.Length == 1 || label.Text == "")
+            {
+                first_number = double.Parse(Input.Text);
+                label.Text = first_number.ToString();
+                Input.Text = "0";
+                //Input.Text = first_number.ToString();
+                if (btn.Text == "x^y")
+                {
+                    label.Text = label.Text + " " + "^" + " ";
+                }
+                else if (btn.Text == "x^1/y")
+                {
+                    label.Text = label.Text + " " + "y_root" + " ";
+                }
+                else
+                {
+                    label.Text = label.Text + " " + btn.Text + " ";
+                }
+                operation = btn.Text;
+                i = 0;
+            }
+            else if (str1[2] == "")
+            {
+                string[] str3 = label.Text.Split(' ');
+                label.Text = str3[0] + " " + btn.Text + " ";
+                operation = btn.Text;
+                i = 0;
+            }
+            else if (str1.Length == 3 && str1[2] != "")
+            {
+                str2 = label.Text.Split(' ');
+                first_number = double.Parse(str2[0]);
+                if (str2[1] == "+")
+                {
+                    Input.Text = (first_number + double.Parse(str2[2])).ToString();
+                    label.Text = Input.Text + " " + btn.Text + " ";
+                    operation = btn.Text;
+                    i = 0;
+                }
+                if (str2[1] == "-")
+                {
+                    Input.Text = (first_number - double.Parse(str2[2])).ToString();
+                    label.Text = Input.Text + " " + btn.Text + " ";
+                    operation = btn.Text;
+                    i = 0;
+                }
+                if (str2[1] == "/")
+                {
+                    Input.Text = (first_number / double.Parse(str2[2])).ToString();
+                    label.Text = Input.Text + " " + btn.Text + " ";
+                    operation = btn.Text;
+                    i = 0;
+                }
+                if (str2[1] == "*")
+                {
+                    Input.Text = (first_number * double.Parse(str2[2])).ToString();
+                    label.Text = Input.Text + " " + btn.Text + " ";
+                    operation = btn.Text;
+                    i = 0;
+                }
+            }
+        }
+        bool ok = true;
         private void Witout_secondNumber(object sender, EventArgs e) //ne trebuet vtorogo chisla
         {
             Button btn = sender as Button;
@@ -74,7 +161,7 @@ namespace Calc
             {
                 label.Text = "sqr(" + first_number + ")";
             }
-            else if(btn.Text == "n!")
+            else if (btn.Text == "n!")
             {
                 label.Text = "fact(" + first_number + ")";
             }
@@ -86,7 +173,7 @@ namespace Calc
             {
                 label.Text = "pow10(" + first_number + ")";
             }
-            else if(btn.Text == "1/x")
+            else if (btn.Text == "1/x")
             {
                 label.Text = "reciproc(" + first_number + ")";
             }
@@ -98,18 +185,34 @@ namespace Calc
             switch (operation2)
             {
                 case "x^3":
-                    res2 = Math.Pow(first_number , 3);
+                    res2 = Math.Pow(first_number, 3);
                     break;
                 case "x^2":
                     res2 = Math.Pow(first_number, 2);
                     break;
                 case "x^1/3":
-                    res2 = Math.Pow(first_number, 0.333333333333333333333333);
+                    if (first_number >= 0)
+                    {
+                        res2 = Math.Pow(first_number, 0.333333333333333333333333);
+                    }
+                    else
+                    {
+                        res2 = Math.Pow(first_number * -1, 0.333333333333333333333333) * -1;
+                    }
                     break;
                 case "n!":
                     res2 = 1;
-                    for (int i = 1; i <= first_number; i++)
-                        res2 *= i;
+                    if (first_number > 0)
+                    {
+                        for (int i = 1; i <= first_number; i++)
+                        {
+                            res2 *= i;
+                        }
+                    }
+                    if (first_number < 0)
+                    {
+                        ok = false;
+                    }
                     break;
                 case "10^x":
                     res2 = Math.Pow(10, first_number);
@@ -122,47 +225,59 @@ namespace Calc
                     break;
             }
             Input.Text = res2.ToString();
+            if (ok == false)
+            {
+                Input.Text = "error";
+
+            }
             i = 0;
         }
 
         private void Result_click(object sender, EventArgs e)
         {
-            if (label.Text != "")
+            string[] u = label.Text.Split(' ');
+            if (Input.Text != label.Text)
             {
-                string[] u = label.Text.Split(' ');
-                first_number = double.Parse(u[0]);
-                second_number = double.Parse(u[u.Length - 1]);
+                if (label.Text != "" && Input.Text != "error" && u[2] != "")
+                {
+                    first_number = double.Parse(u[0]);
+                    second_number = double.Parse(u[2]);
+                }
+                if (label.Text == "" && Input.Text != "error")
+                {
+                    first_number = double.Parse(Input.Text);
+                }
+                else if (u[2] == "")
+                {
+                    second_number = first_number;
+                }
+                label.Text = "";
+                switch (operation)
+                {
+                    case "+":
+                        res = first_number + second_number;
+                        break;
+                    case "-":
+                        res = first_number - second_number;
+                        break;
+                    case "*":
+                        res = first_number * second_number;
+                        break;
+                    case "/":
+                        res = first_number / second_number;
+                        break;
+                    case "%":
+                        res = first_number * second_number / 100;
+                        break;
+                    case "x^y":
+                        res = Math.Pow(first_number, second_number);
+                        break;
+                    case "x^1/y":
+                        res = Math.Pow(first_number, 1 / second_number);
+                        break;
+                }
+                Input.Text = res.ToString();
             }
-            else
-            {
-                first_number = double.Parse(Input.Text);
-            }
-            label.Text = "";
-            switch (operation)
-            {
-                case "+":
-                    res = first_number + second_number;
-                    break;
-                case "-":
-                    res = first_number - second_number;
-                    break;
-                case "*":
-                    res = first_number * second_number;
-                    break;
-                case "/":
-                    res = first_number / second_number;
-                    break;
-                case "%":
-                    res = first_number * second_number / 100;
-                    break;
-                case "x^y":
-                    res = Math.Pow(first_number, second_number);
-                    break;
-                case "x^1/y":
-                    res = Math.Pow(first_number, 1 / second_number);
-                    break;
-            }
-            Input.Text = res.ToString();
             i = 0;
             o++;
         }
@@ -247,46 +362,64 @@ namespace Calc
                 }
                 Input.Text = res3.ToString();
                 i = 0;
-            } 
+            }
         }
 
-
+        static void Memory_Save(double a)
+        {
+            FileStream fs = new FileStream(@"Memory.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            BinaryFormatter bn = new BinaryFormatter();
+            bn.Serialize(fs, a);
+            fs.Close();
+        }
+        static double Memory_read()
+        {
+            FileStream fs = new FileStream(@"Memory.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            BinaryFormatter bn = new BinaryFormatter();
+            double mem = (double) bn.Deserialize(fs);
+            fs.Close();
+            return mem;
+        }
         private void MS_Click(object sender, EventArgs e)
         {
             M_label.Text = "M";
             label.Text = "";
             memory = double.Parse(Input.Text);
+            Memory_Save(memory);
             i = 0;
         }
 
-        private void memory_read(object sender, EventArgs e)
+        private void memory_read(object sender, EventArgs e) 
         {
-            Input.Text = memory.ToString();
+            Input.Text = Memory_read().ToString();
             label.Text = "";
+            i = 0;
         }
 
         private void memory_plus(object sender, EventArgs e)
         {
-            memory = memory + double.Parse(Input.Text);
+            double f = Memory_read() + double.Parse(Input.Text);
+            Memory_Save(f);
             label.Text = "";
         }
 
         private void memory_minus(object sender, EventArgs e)
         {
-            memory = memory - double.Parse(Input.Text);
+            double f = Memory_read() - double.Parse(Input.Text);
+            Memory_Save(f);
             label.Text = "";
         }
 
         private void memory_clear(object sender, EventArgs e)
         {
-            memory = 0;
+            Memory_Save(0);
             M_label.Text = "";
         }
 
         private void CE_Click(object sender, EventArgs e)
         {
             string[] y = label.Text.Split(' ');
-            if(y.Length == 3)
+            if (y.Length == 3)
             {
                 label.Text = y[0] + " " + y[1] + " ";
                 Input.Text = "0";
@@ -296,27 +429,49 @@ namespace Calc
             {
                 label.Text = "";
                 Input.Text = "0";
+
                 i = 0;
             }
         }
 
-        int f = 0;
+        private void Point_click(object sender, EventArgs e)
+        {
+            i++;
+            string[] str6 = label.Text.Split(' ');
 
+            if (Input.Text.Contains('.') == false)
+            {
+                if (Input.Text == "0")
+                {
+                    Input.Text += ".";
+                    label.Text += "0.";
+                }
+                else
+                {
+                    Input.Text += ".";
+                    label.Text += ".";
+                }
+            }
+        }
+
+        //int f = 0;
         private void Del_Click(object sender, EventArgs e)
         {
-            f++;
-            string s = Input.Text;
-            string t = "";
-            for (int i = 0; i < s.Length - f; i++)
+            if (!label.Text.Contains("ln") && !label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("log") && !label.Text.Contains("fact") && !label.Text.Contains("ln") && !label.Text.Contains("ro"))
             {
-                t += s[i];
-            }
-            Input.Text = t;
-            label.Text = t; 
-            f = 0;
-            if (Input.Text == "")
-            {
-                Input.Text = "0";
+                if (Input.Text != "0" && label.Text != "")
+                {
+                    if (Input.Text.Length != 1)
+                    {
+                        Input.Text = Input.Text.Remove(Input.Text.Length - 1);
+                        label.Text = label.Text.Remove(label.Text.Length - 1);
+                    }
+                    else
+                    {
+                        Input.Text = "0";
+                        label.Text = label.Text.Remove(label.Text.Length - 1);
+                    }
+                }
             }
             i = 0;
         }
@@ -335,10 +490,13 @@ namespace Calc
 
         private void Negativ_Click(object sender, EventArgs e)
         {
-            double d = -1 * int.Parse(Input.Text);
-            Input.Text = d.ToString();
+            //if (Input.Text != "0")
+            //{
+                double d = -1 * int.Parse(Input.Text);
+                Input.Text = d.ToString();
+                label.Text = d.ToString();
+            //}
         }
-
 
         int k = 0;
         private void Arc_Checked(object sender, EventArgs e)
@@ -370,8 +528,8 @@ namespace Calc
 
         private void button34_Click(object sender, EventArgs e)
         {
-            label.Text += "PI";
             double l = Math.PI;
+            label.Text += l.ToString();
             Input.Text = l.ToString();
         }
     }

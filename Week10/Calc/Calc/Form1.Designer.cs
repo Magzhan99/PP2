@@ -77,15 +77,14 @@
             this.Degree = new System.Windows.Forms.CheckBox();
             this.Arc = new System.Windows.Forms.CheckBox();
             this.label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.M_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(104, 172);
+            this.button1.Location = new System.Drawing.Point(65, 139);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 39);
@@ -96,9 +95,9 @@
             // 
             // root
             // 
-            this.root.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.root.BackColor = System.Drawing.Color.RoyalBlue;
             this.root.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.root.Location = new System.Drawing.Point(530, 125);
+            this.root.Location = new System.Drawing.Point(432, 99);
             this.root.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.root.Name = "root";
             this.root.Size = new System.Drawing.Size(61, 39);
@@ -109,9 +108,9 @@
             // 
             // negative
             // 
-            this.negative.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.negative.BackColor = System.Drawing.Color.RoyalBlue;
             this.negative.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.negative.Location = new System.Drawing.Point(459, 125);
+            this.negative.Location = new System.Drawing.Point(370, 99);
             this.negative.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.negative.Name = "negative";
             this.negative.Size = new System.Drawing.Size(61, 39);
@@ -122,9 +121,9 @@
             // 
             // Clear
             // 
-            this.Clear.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Clear.BackColor = System.Drawing.Color.RoyalBlue;
             this.Clear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Clear.Location = new System.Drawing.Point(388, 125);
+            this.Clear.Location = new System.Drawing.Point(309, 99);
             this.Clear.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(61, 39);
@@ -135,9 +134,9 @@
             // 
             // CE
             // 
-            this.CE.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.CE.BackColor = System.Drawing.Color.RoyalBlue;
             this.CE.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CE.Location = new System.Drawing.Point(317, 125);
+            this.CE.Location = new System.Drawing.Point(248, 99);
             this.CE.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CE.Name = "CE";
             this.CE.Size = new System.Drawing.Size(61, 39);
@@ -148,9 +147,9 @@
             // 
             // delete
             // 
-            this.delete.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.delete.BackColor = System.Drawing.Color.RoyalBlue;
             this.delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete.Location = new System.Drawing.Point(246, 125);
+            this.delete.Location = new System.Drawing.Point(187, 99);
             this.delete.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(61, 39);
@@ -161,9 +160,9 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button12.BackColor = System.Drawing.Color.RoyalBlue;
             this.button12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(104, 125);
+            this.button12.Location = new System.Drawing.Point(65, 99);
             this.button12.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(61, 39);
@@ -174,9 +173,9 @@
             // 
             // sinus
             // 
-            this.sinus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.sinus.BackColor = System.Drawing.Color.RoyalBlue;
             this.sinus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sinus.Location = new System.Drawing.Point(33, 125);
+            this.sinus.Location = new System.Drawing.Point(4, 99);
             this.sinus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.sinus.Name = "sinus";
             this.sinus.Size = new System.Drawing.Size(61, 39);
@@ -187,9 +186,9 @@
             // 
             // cosinus
             // 
-            this.cosinus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.cosinus.BackColor = System.Drawing.Color.RoyalBlue;
             this.cosinus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cosinus.Location = new System.Drawing.Point(33, 172);
+            this.cosinus.Location = new System.Drawing.Point(4, 139);
             this.cosinus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cosinus.Name = "cosinus";
             this.cosinus.Size = new System.Drawing.Size(61, 39);
@@ -200,9 +199,9 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(104, 219);
+            this.button3.Location = new System.Drawing.Point(65, 178);
             this.button3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(61, 39);
@@ -213,9 +212,9 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(246, 172);
+            this.button4.Location = new System.Drawing.Point(187, 139);
             this.button4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(61, 39);
@@ -226,9 +225,9 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(317, 172);
+            this.button5.Location = new System.Drawing.Point(248, 139);
             this.button5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(61, 39);
@@ -239,9 +238,9 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(388, 172);
+            this.button6.Location = new System.Drawing.Point(309, 139);
             this.button6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(61, 39);
@@ -252,9 +251,9 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button14.BackColor = System.Drawing.Color.RoyalBlue;
             this.button14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button14.Location = new System.Drawing.Point(459, 172);
+            this.button14.Location = new System.Drawing.Point(370, 139);
             this.button14.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(61, 39);
@@ -265,9 +264,9 @@
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button15.BackColor = System.Drawing.Color.RoyalBlue;
             this.button15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(530, 172);
+            this.button15.Location = new System.Drawing.Point(432, 139);
             this.button15.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(61, 39);
@@ -278,9 +277,9 @@
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button16.BackColor = System.Drawing.Color.RoyalBlue;
             this.button16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button16.Location = new System.Drawing.Point(104, 266);
+            this.button16.Location = new System.Drawing.Point(65, 218);
             this.button16.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(61, 39);
@@ -291,9 +290,9 @@
             // 
             // tangent
             // 
-            this.tangent.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tangent.BackColor = System.Drawing.Color.RoyalBlue;
             this.tangent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tangent.Location = new System.Drawing.Point(33, 219);
+            this.tangent.Location = new System.Drawing.Point(4, 178);
             this.tangent.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tangent.Name = "tangent";
             this.tangent.Size = new System.Drawing.Size(61, 39);
@@ -304,9 +303,9 @@
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button18.BackColor = System.Drawing.Color.RoyalBlue;
             this.button18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button18.Location = new System.Drawing.Point(175, 219);
+            this.button18.Location = new System.Drawing.Point(126, 178);
             this.button18.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(61, 39);
@@ -317,9 +316,9 @@
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button19.BackColor = System.Drawing.Color.RoyalBlue;
             this.button19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button19.Location = new System.Drawing.Point(246, 219);
+            this.button19.Location = new System.Drawing.Point(187, 178);
             this.button19.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(61, 39);
@@ -330,9 +329,9 @@
             // 
             // button20
             // 
-            this.button20.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button20.BackColor = System.Drawing.Color.RoyalBlue;
             this.button20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(317, 219);
+            this.button20.Location = new System.Drawing.Point(248, 178);
             this.button20.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(61, 39);
@@ -343,9 +342,9 @@
             // 
             // button21
             // 
-            this.button21.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button21.BackColor = System.Drawing.Color.RoyalBlue;
             this.button21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(388, 219);
+            this.button21.Location = new System.Drawing.Point(309, 178);
             this.button21.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(61, 39);
@@ -356,9 +355,9 @@
             // 
             // button22
             // 
-            this.button22.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button22.BackColor = System.Drawing.Color.RoyalBlue;
             this.button22.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(459, 219);
+            this.button22.Location = new System.Drawing.Point(370, 178);
             this.button22.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(61, 39);
@@ -369,9 +368,9 @@
             // 
             // button23
             // 
-            this.button23.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button23.BackColor = System.Drawing.Color.RoyalBlue;
             this.button23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button23.Location = new System.Drawing.Point(530, 219);
+            this.button23.Location = new System.Drawing.Point(432, 178);
             this.button23.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(61, 39);
@@ -382,9 +381,9 @@
             // 
             // button24
             // 
-            this.button24.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button24.BackColor = System.Drawing.Color.RoyalBlue;
             this.button24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button24.Location = new System.Drawing.Point(175, 125);
+            this.button24.Location = new System.Drawing.Point(126, 99);
             this.button24.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(61, 39);
@@ -395,9 +394,9 @@
             // 
             // cotangent
             // 
-            this.cotangent.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.cotangent.BackColor = System.Drawing.Color.RoyalBlue;
             this.cotangent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cotangent.Location = new System.Drawing.Point(33, 266);
+            this.cotangent.Location = new System.Drawing.Point(4, 218);
             this.cotangent.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cotangent.Name = "cotangent";
             this.cotangent.Size = new System.Drawing.Size(61, 39);
@@ -408,9 +407,9 @@
             // 
             // button26
             // 
-            this.button26.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button26.BackColor = System.Drawing.Color.RoyalBlue;
             this.button26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button26.Location = new System.Drawing.Point(175, 266);
+            this.button26.Location = new System.Drawing.Point(126, 218);
             this.button26.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(61, 39);
@@ -421,9 +420,9 @@
             // 
             // one
             // 
-            this.one.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.one.BackColor = System.Drawing.Color.RoyalBlue;
             this.one.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.one.Location = new System.Drawing.Point(246, 266);
+            this.one.Location = new System.Drawing.Point(187, 218);
             this.one.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(61, 39);
@@ -434,9 +433,9 @@
             // 
             // button28
             // 
-            this.button28.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button28.BackColor = System.Drawing.Color.RoyalBlue;
             this.button28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button28.Location = new System.Drawing.Point(317, 266);
+            this.button28.Location = new System.Drawing.Point(248, 218);
             this.button28.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(61, 39);
@@ -447,9 +446,9 @@
             // 
             // button29
             // 
-            this.button29.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button29.BackColor = System.Drawing.Color.RoyalBlue;
             this.button29.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button29.Location = new System.Drawing.Point(388, 266);
+            this.button29.Location = new System.Drawing.Point(309, 218);
             this.button29.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(61, 39);
@@ -460,9 +459,9 @@
             // 
             // button30
             // 
-            this.button30.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button30.BackColor = System.Drawing.Color.RoyalBlue;
             this.button30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button30.Location = new System.Drawing.Point(459, 266);
+            this.button30.Location = new System.Drawing.Point(370, 218);
             this.button30.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(61, 39);
@@ -473,9 +472,9 @@
             // 
             // button32
             // 
-            this.button32.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button32.BackColor = System.Drawing.Color.RoyalBlue;
             this.button32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button32.Location = new System.Drawing.Point(175, 172);
+            this.button32.Location = new System.Drawing.Point(126, 139);
             this.button32.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(61, 39);
@@ -486,9 +485,9 @@
             // 
             // button33
             // 
-            this.button33.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button33.BackColor = System.Drawing.Color.RoyalBlue;
             this.button33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button33.Location = new System.Drawing.Point(33, 313);
+            this.button33.Location = new System.Drawing.Point(4, 258);
             this.button33.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(61, 39);
@@ -499,9 +498,9 @@
             // 
             // button34
             // 
-            this.button34.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button34.BackColor = System.Drawing.Color.RoyalBlue;
             this.button34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button34.Location = new System.Drawing.Point(104, 313);
+            this.button34.Location = new System.Drawing.Point(65, 258);
             this.button34.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(61, 39);
@@ -512,9 +511,9 @@
             // 
             // mSave
             // 
-            this.mSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mSave.BackColor = System.Drawing.Color.RoyalBlue;
             this.mSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mSave.Location = new System.Drawing.Point(246, 78);
+            this.mSave.Location = new System.Drawing.Point(187, 59);
             this.mSave.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mSave.Name = "mSave";
             this.mSave.Size = new System.Drawing.Size(61, 39);
@@ -525,9 +524,9 @@
             // 
             // mRead
             // 
-            this.mRead.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mRead.BackColor = System.Drawing.Color.RoyalBlue;
             this.mRead.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mRead.Location = new System.Drawing.Point(317, 78);
+            this.mRead.Location = new System.Drawing.Point(248, 59);
             this.mRead.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mRead.Name = "mRead";
             this.mRead.Size = new System.Drawing.Size(61, 39);
@@ -538,9 +537,9 @@
             // 
             // mPlus
             // 
-            this.mPlus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mPlus.BackColor = System.Drawing.Color.RoyalBlue;
             this.mPlus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mPlus.Location = new System.Drawing.Point(388, 78);
+            this.mPlus.Location = new System.Drawing.Point(309, 59);
             this.mPlus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mPlus.Name = "mPlus";
             this.mPlus.Size = new System.Drawing.Size(61, 39);
@@ -551,9 +550,9 @@
             // 
             // mMinus
             // 
-            this.mMinus.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mMinus.BackColor = System.Drawing.Color.RoyalBlue;
             this.mMinus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mMinus.Location = new System.Drawing.Point(459, 78);
+            this.mMinus.Location = new System.Drawing.Point(370, 59);
             this.mMinus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mMinus.Name = "mMinus";
             this.mMinus.Size = new System.Drawing.Size(61, 39);
@@ -564,9 +563,9 @@
             // 
             // mClear
             // 
-            this.mClear.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mClear.BackColor = System.Drawing.Color.RoyalBlue;
             this.mClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mClear.Location = new System.Drawing.Point(530, 78);
+            this.mClear.Location = new System.Drawing.Point(432, 59);
             this.mClear.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mClear.Name = "mClear";
             this.mClear.Size = new System.Drawing.Size(61, 39);
@@ -577,9 +576,9 @@
             // 
             // button40
             // 
-            this.button40.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button40.BackColor = System.Drawing.Color.RoyalBlue;
             this.button40.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button40.Location = new System.Drawing.Point(175, 313);
+            this.button40.Location = new System.Drawing.Point(126, 258);
             this.button40.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(61, 39);
@@ -590,35 +589,35 @@
             // 
             // dot
             // 
-            this.dot.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.dot.BackColor = System.Drawing.Color.RoyalBlue;
             this.dot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dot.Location = new System.Drawing.Point(388, 313);
+            this.dot.Location = new System.Drawing.Point(309, 258);
             this.dot.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(61, 39);
             this.dot.TabIndex = 49;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = false;
-            this.dot.Click += new System.EventHandler(this.numbers_click);
+            this.dot.Click += new System.EventHandler(this.Point_click);
             // 
             // zero
             // 
-            this.zero.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.zero.BackColor = System.Drawing.Color.RoyalBlue;
             this.zero.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.zero.Location = new System.Drawing.Point(246, 313);
+            this.zero.Location = new System.Drawing.Point(187, 258);
             this.zero.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.zero.Name = "zero";
-            this.zero.Size = new System.Drawing.Size(132, 39);
+            this.zero.Size = new System.Drawing.Size(122, 39);
             this.zero.TabIndex = 48;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = false;
-            this.zero.Click += new System.EventHandler(this.numbers_click);
+            this.zero.Click += new System.EventHandler(this.Zero_click);
             // 
             // button44
             // 
-            this.button44.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button44.BackColor = System.Drawing.Color.RoyalBlue;
             this.button44.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button44.Location = new System.Drawing.Point(459, 313);
+            this.button44.Location = new System.Drawing.Point(370, 258);
             this.button44.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(61, 39);
@@ -632,26 +631,27 @@
             this.Input.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Input.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Input.BackColor = System.Drawing.Color.RoyalBlue;
             this.Input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Input.Cursor = System.Windows.Forms.Cursors.Default;
             this.Input.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Input.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Input.Location = new System.Drawing.Point(33, 51);
+            this.Input.Location = new System.Drawing.Point(4, 36);
             this.Input.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Input.MaximumSize = new System.Drawing.Size(600, 100);
             this.Input.Name = "Input";
-            this.Input.Size = new System.Drawing.Size(558, 19);
+            this.Input.Size = new System.Drawing.Size(489, 19);
             this.Input.TabIndex = 54;
             this.Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(530, 266);
+            this.button7.Location = new System.Drawing.Point(432, 218);
             this.button7.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(61, 85);
+            this.button7.Size = new System.Drawing.Size(61, 79);
             this.button7.TabIndex = 55;
             this.button7.Text = "=";
             this.button7.UseVisualStyleBackColor = false;
@@ -659,10 +659,10 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button8.BackColor = System.Drawing.Color.RoyalBlue;
             this.button8.Enabled = false;
             this.button8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(175, 78);
+            this.button8.Location = new System.Drawing.Point(126, 59);
             this.button8.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(61, 39);
@@ -672,10 +672,10 @@
             // Degree
             // 
             this.Degree.AutoSize = true;
-            this.Degree.BackColor = System.Drawing.Color.Black;
+            this.Degree.BackColor = System.Drawing.Color.Yellow;
             this.Degree.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Degree.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Degree.Location = new System.Drawing.Point(33, 78);
+            this.Degree.ForeColor = System.Drawing.Color.Blue;
+            this.Degree.Location = new System.Drawing.Point(5, 58);
             this.Degree.Name = "Degree";
             this.Degree.Size = new System.Drawing.Size(73, 22);
             this.Degree.TabIndex = 59;
@@ -685,10 +685,10 @@
             // Arc
             // 
             this.Arc.AutoSize = true;
-            this.Arc.BackColor = System.Drawing.Color.Black;
+            this.Arc.BackColor = System.Drawing.Color.Yellow;
             this.Arc.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Arc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Arc.Location = new System.Drawing.Point(33, 98);
+            this.Arc.ForeColor = System.Drawing.Color.Blue;
+            this.Arc.Location = new System.Drawing.Point(5, 78);
             this.Arc.Name = "Arc";
             this.Arc.Size = new System.Drawing.Size(50, 22);
             this.Arc.TabIndex = 60;
@@ -698,28 +698,20 @@
             // 
             // label
             // 
-            this.label.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label.BackColor = System.Drawing.Color.RoyalBlue;
             this.label.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label.Location = new System.Drawing.Point(33, 16);
+            this.label.Location = new System.Drawing.Point(4, 5);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(558, 31);
+            this.label.Size = new System.Drawing.Size(489, 31);
             this.label.TabIndex = 61;
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label1.Location = new System.Drawing.Point(33, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(558, 18);
-            this.label1.TabIndex = 62;
             // 
             // M_label
             // 
             this.M_label.AutoSize = true;
             this.M_label.BackColor = System.Drawing.Color.LightSteelBlue;
             this.M_label.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.M_label.Location = new System.Drawing.Point(33, 51);
+            this.M_label.Location = new System.Drawing.Point(11, 32);
             this.M_label.Name = "M_label";
             this.M_label.Size = new System.Drawing.Size(0, 15);
             this.M_label.TabIndex = 63;
@@ -728,12 +720,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(621, 374);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.Yellow;
+            this.ClientSize = new System.Drawing.Size(497, 301);
             this.Controls.Add(this.M_label);
             this.Controls.Add(this.label);
             this.Controls.Add(this.Input);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Arc);
             this.Controls.Add(this.Degree);
             this.Controls.Add(this.button8);
@@ -841,7 +834,6 @@
         private System.Windows.Forms.CheckBox Degree;
         private System.Windows.Forms.CheckBox Arc;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label M_label;
     }
 }

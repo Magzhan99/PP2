@@ -80,7 +80,7 @@ namespace Spiral
             }
             else
             {
-                if (x == f + 30 && y < 440 - f)
+                if (x == f && y < 440 - f)
                 {
                     y += d;
                     ok = 1;
@@ -96,7 +96,7 @@ namespace Spiral
                     y -= d;
                     ok = 3;
                 }
-                if (y == f && x > f + 30)
+                if (y == f && x > f)
                 {
                     x -= d;
                     ok = 4;
