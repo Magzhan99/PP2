@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary; // finish Numbers_click when there is "fact, sqr, cube"
-using System.Text;                                    // finish Del_click when there is "fact, sqr, cube"
+using System.Runtime.Serialization.Formatters.Binary; //poslednee izmenenie  6 + 5 / 4 ....
+using System.Text;                                    
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +17,7 @@ namespace Calc
         int i = 0, o = 0;
         double memory = 0, first_number = 0, second_number = 0, res = 0, res2 = 0, res3 = 0;
         string[] str1, str2;
-        string operation, operation2;
+        string operation, operation2, result = "";
         public Calculator()
         {
             InitializeComponent();
@@ -32,7 +32,8 @@ namespace Calc
             i++;
             if(i == 1)
             {
-                if (!label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("fact") && !label.Text.Contains("cube") && !label.Text.Contains("log") && !label.Text.Contains("reciproc") && !label.Text.Contains("cuberoot") && !label.Text.Contains("ln"))
+                //!label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("fact") && !label.Text.Contains("cube") && !label.Text.Contains("log") && !label.Text.Contains("reciproc") && !label.Text.Contains("cuberoot") && !label.Text.Contains("ln")
+                if (!label.Text.Contains('(') && !label.Text.Contains(')') && label.Text != Math.Exp(1).ToString() && label.Text != Math.PI.ToString())
                 {
                     Input.Text = btn.Text;
                     label.Text += btn.Text;
@@ -119,29 +120,34 @@ namespace Calc
                 first_number = double.Parse(str2[0]);
                 if (str2[1] == "+")
                 {
+                    Input.Text = "0";
+                    label.Text = (first_number + double.Parse(str2[2])).ToString() + " " + btn.Text + " ";
+                    operation = btn.Text;
+                    /*
                     Input.Text = (first_number + double.Parse(str2[2])).ToString();
                     label.Text = Input.Text + " " + btn.Text + " ";
                     operation = btn.Text;
+                    */
                     i = 0;
                 }
                 if (str2[1] == "-")
                 {
-                    Input.Text = (first_number - double.Parse(str2[2])).ToString();
-                    label.Text = Input.Text + " " + btn.Text + " ";
+                    Input.Text = "0";
+                    label.Text = (first_number - double.Parse(str2[2])).ToString() + " " + btn.Text + " ";
                     operation = btn.Text;
                     i = 0;
                 }
                 if (str2[1] == "/")
                 {
-                    Input.Text = (first_number / double.Parse(str2[2])).ToString();
-                    label.Text = Input.Text + " " + btn.Text + " ";
+                    Input.Text = "0";
+                    label.Text = (first_number / double.Parse(str2[2])).ToString() + " " + btn.Text + " ";
                     operation = btn.Text;
                     i = 0;
                 }
                 if (str2[1] == "*")
                 {
-                    Input.Text = (first_number * double.Parse(str2[2])).ToString();
-                    label.Text = Input.Text + " " + btn.Text + " ";
+                    Input.Text = "0";
+                    label.Text = (first_number * double.Parse(str2[2])).ToString() + " " + btn.Text + " ";
                     operation = btn.Text;
                     i = 0;
                 }
@@ -298,31 +304,63 @@ namespace Calc
                         res3 = Math.Log(first_number);
                         break;
                     case "sin":
-                        res3 = Math.Sin(first_number * Math.PI / 180);
+                        if (first_number == 180)
+                        {
+                            res3 = 0;
+                        }
+                        else
+                        {
+                            res3 = Math.Sin(first_number * Math.PI / 180);
+                        }
                         break;
                     case "cos":
-                        res3 = Math.Cos(first_number * Math.PI / 180);
+                        if (first_number == 90 || first_number == 270)
+                        {
+                            res3 = 0;
+                        }
+                        else
+                        {
+                            res3 = Math.Cos(first_number * Math.PI / 180);
+                        }
                         break;
                     case "tan":
-                        res3 = Math.Tan(first_number * Math.PI / 180);
+                        if (first_number == 90 || first_number == 270)
+                        {
+                            result = "wrong run";
+                        }
+                        else if (first_number == 180)
+                        {
+                            res3 = 0;
+                        }
+                        else
+                        {
+                            res3 = Math.Tan(first_number * Math.PI / 180);
+                        }
                         break;
                     case "ctg":
-                        res3 = Math.Cos(first_number * Math.PI / 180) / Math.Sin(first_number * Math.PI / 180);
-                        break;
-                    case "asin":
-                        res3 = Math.Asin(first_number);
-                        break;
-                    case "acos":
-                        res3 = Math.Acos(first_number);
-                        break;
-                    case "atan":
-                        res3 = Math.Atan(first_number);
-                        break;
-                    case "actg":
-                        res3 = Math.Atan(1 / first_number);
+                        if (first_number == 90 || first_number == 270)
+                        {
+                            res3 = 0;
+                        }
+                        else if (first_number == 180 || first_number == 0)
+                        {
+                            result = "wrong run";
+                        }
+                        else
+                        {
+                            res3 = Math.Cos(first_number * Math.PI / 180) / Math.Sin(first_number * Math.PI / 180);
+                        }
                         break;
                 }
-                Input.Text = res3.ToString();
+                if (result == "")
+                {
+                    Input.Text = res3.ToString();
+                }
+                else
+                {
+                    Input.Text = result;
+                    result = "";
+                }
                 i = 0;
             }
             else
@@ -347,18 +385,6 @@ namespace Calc
                     case "ctg":
                         res3 = Math.Cos(first_number) / Math.Sin(first_number);
                         break;
-                    case "asin":
-                        res3 = Math.Asin(first_number);
-                        break;
-                    case "acos":
-                        res3 = Math.Acos(first_number);
-                        break;
-                    case "atan":
-                        res3 = Math.Atan(first_number);
-                        break;
-                    case "actg":
-                        res3 = Math.Atan(1 / first_number);
-                        break;
                 }
                 Input.Text = res3.ToString();
                 i = 0;
@@ -380,6 +406,7 @@ namespace Calc
             fs.Close();
             return mem;
         }
+
         private void MS_Click(object sender, EventArgs e)
         {
             M_label.Text = "M";
@@ -389,28 +416,30 @@ namespace Calc
             i = 0;
         }
 
-        private void memory_read(object sender, EventArgs e) 
+        private void MRead_Click(object sender, EventArgs e) 
         {
             Input.Text = Memory_read().ToString();
             label.Text = "";
             i = 0;
         }
 
-        private void memory_plus(object sender, EventArgs e)
+        private void MPlus_Click(object sender, EventArgs e)
         {
             double f = Memory_read() + double.Parse(Input.Text);
             Memory_Save(f);
             label.Text = "";
+            i = 0;
         }
 
-        private void memory_minus(object sender, EventArgs e)
+        private void MMinus_Click(object sender, EventArgs e)
         {
             double f = Memory_read() - double.Parse(Input.Text);
             Memory_Save(f);
             label.Text = "";
+            i = 0;
         }
 
-        private void memory_clear(object sender, EventArgs e)
+        private void MClear_Click(object sender, EventArgs e)
         {
             Memory_Save(0);
             M_label.Text = "";
@@ -457,11 +486,12 @@ namespace Calc
         //int f = 0;
         private void Del_Click(object sender, EventArgs e)
         {
-            if (!label.Text.Contains("ln") && !label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("log") && !label.Text.Contains("fact") && !label.Text.Contains("ln") && !label.Text.Contains("ro"))
+            //!label.Text.Contains("ln") && !label.Text.Contains("ctg") && !label.Text.Contains("tan") && !label.Text.Contains("cos") && !label.Text.Contains("sin") && !label.Text.Contains("sqr") && !label.Text.Contains("log") && !label.Text.Contains("fact") && !label.Text.Contains("ln") && !label.Text.Contains("ro")
+            if (!label.Text.Contains('(') && !label.Text.Contains(')'))
             {
                 if (Input.Text != "0" && label.Text != "")
                 {
-                    if (Input.Text.Length != 1)
+                    if (Input.Text.Length != 1 )
                     {
                         Input.Text = Input.Text.Remove(Input.Text.Length - 1);
                         label.Text = label.Text.Remove(label.Text.Length - 1);
@@ -473,7 +503,7 @@ namespace Calc
                     }
                 }
             }
-            i = 0;
+            //i = 0;
         }
 
         private void Clear_click(object sender, EventArgs e)
@@ -490,46 +520,57 @@ namespace Calc
 
         private void Negativ_Click(object sender, EventArgs e)
         {
-            //if (Input.Text != "0")
-            //{
+            string[] y = label.Text.Split(' ');
+
+            if (y.Length == 1 && Input.Text != "0")
+            {
                 double d = -1 * int.Parse(Input.Text);
                 Input.Text = d.ToString();
                 label.Text = d.ToString();
-            //}
-        }
-
-        int k = 0;
-        private void Arc_Checked(object sender, EventArgs e)
-        {
-            k = k % 2;
-            if (k == 1)
-            {
-                sinus.Text = "sin";
-                cosinus.Text = "cos";
-                tangent.Text = "tan";
-                cotangent.Text = "ctg";
             }
-            else
+            if (y.Length == 3 && Input.Text != "0")
             {
-                sinus.Text = "asin";
-                cosinus.Text = "acos";
-                tangent.Text = "atan";
-                cotangent.Text = "actg";
+                double d = -1 * int.Parse(Input.Text);
+                Input.Text = d.ToString();
+                label.Text = y[0] + " " + y[1] + " " + d.ToString();
             }
-            k++;
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
-            label.Text += "Exp";
-            double d = Math.Exp(1);
-            Input.Text = d.ToString();
+            string[] m = label.Text.Split(' ');
+            double l = Math.Exp(1);
+            if (m.Length == 1)
+            {
+                label.Text = l.ToString();
+            }
+            if (m.Length == 2)
+            {
+                label.Text = label.Text + " " + l.ToString();
+            }
+            if (m.Length == 3)
+            {
+                label.Text = m[0] + " " + m[1] + " " + l.ToString();
+            }
+            Input.Text = l.ToString();
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
+            string[] m = label.Text.Split(' ');
             double l = Math.PI;
-            label.Text += l.ToString();
+            if (m.Length == 1)
+            {
+                label.Text = l.ToString();
+            }
+            if (m.Length == 2)
+            {
+                label.Text = label.Text + " " + l.ToString();
+            }
+            if (m.Length == 3)
+            {
+                label.Text =  m[0] + " " + m[1] + " " + l.ToString(); 
+            }
             Input.Text = l.ToString();
         }
     }

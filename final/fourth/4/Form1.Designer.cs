@@ -1,4 +1,4 @@
-﻿namespace Asteroidy
+﻿namespace _4
 {
     partial class Form1
     {
@@ -29,46 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btn = new System.Windows.Forms.Button();
-            this.tr = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // btn
+            // timer1
             // 
-            this.btn.BackColor = System.Drawing.Color.Maroon;
-            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn.Location = new System.Drawing.Point(200, 505);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(90, 10);
-            this.btn.TabIndex = 0;
-            this.btn.UseVisualStyleBackColor = false;
-            // 
-            // tr
-            // 
-            this.tr.Enabled = true;
-            this.tr.Interval = 1;
-            this.tr.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Interval = 600;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(534, 520);
-            this.Controls.Add(this.btn);
-            this.KeyPreview = true;
+            this.ClientSize = new System.Drawing.Size(670, 463);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Timer tr;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

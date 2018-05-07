@@ -12,11 +12,12 @@ namespace MaxMin
         static void Main(string[] args)
         {
 
-            FileStream fs = new FileStream(@"C:\users\user\desktop\just\папка2\файл2.1.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\users\user\desktop\just\папка2\read.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
 
             string s = sr.ReadLine();
-
+            sr.Close();
+            fs.Close();
             string[] numbers = s.Split(' ');
 
             int maxi = int.Parse(numbers[0]);
@@ -30,9 +31,13 @@ namespace MaxMin
                 if (x < mini)
                     mini = int.Parse(numbers[i]);
             }
-                       
-            Console.Write("maximum number is " + maxi + "\n");
-            Console.Write("minimum number is " + mini);
+
+            StreamWriter sw = new StreamWriter(@"C:\users\user\desktop\just\папка2\write.txt");
+            sw.WriteLine("maximum number is " + maxi + "\n");
+            sw.WriteLine("minimum number is " + mini + "\n");
+            sw.Close();
+            //Console.Write("maximum number is " + maxi + "\n");
+            //Console.Write("minimum number is " + mini);
             Console.ReadKey();
 
         }

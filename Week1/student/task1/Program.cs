@@ -6,49 +6,40 @@ using System.Threading.Tasks;
 
 namespace task1
 {
-
     class Student
     {
         public string fname;
         public string lname;
         public int age;
-        public float GPA;
+        public double GPI;
 
         public Student()
         {
-            fname = "magzhan";
-            lname = "kadylbekov";
+            fname = "Magzhan";
+            lname = "Kadylbekov";
             age = 18;
-            GPA = 3; 
+            GPI = 4;
         }
-
-        public Student(string fname, string surname,int age, float gpa)
+        public Student(string a, string b, int c, double d)
         {
-            this.fname = fname;
-            lname = surname;
-            this.age = age;
-            GPA = gpa;
+            fname = a;
+            lname = b;
+            age = c;
+            GPI = d;
         }
-
         public override string ToString()
         {
-            return fname + " " + lname + " " + age + " " + GPA;
-
+            return fname + " " + lname + " " + age + " " + GPI;
         }
     }
-
     class Program
     {
         static void Main(string[] args)
         {
-            Student s = new Student();
-            s.GPA = 4;
-
-
-            Student s2 = new Student("KBTU", "FIT", 19, 3.5);
-            Console.WriteLine(s);      //magzhan kadylbekov 18 4 
-            Console.WriteLine(s2);     //magzhan kadylbekov 18 3
-            
+            Student s1 = new Student();
+            s1.GPI = 6;
+            //Console.WriteLine(s1.ToString());
+            Console.WriteLine(s1);
             Console.ReadKey();
         }
     }

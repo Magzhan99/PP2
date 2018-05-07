@@ -14,6 +14,7 @@ namespace Asteroidy
     {
         int k = 0, score = 0;
         List<Button> body= new List<Button>();
+        Random R = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Asteroidy
 
                 if (a >= x_1 - w_h && a <= x_1 + w_1)
                 {
-                    if (y_1 == b+ h_1)
+                    if (y_1 == b + w_h)
                     {
                         return false;
                     }
@@ -67,19 +68,16 @@ namespace Asteroidy
             }
         }
 
-        private void btn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(btn.Location + "");
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(k % 8 == 0)
+            if(k % 30 == 0)
             {
-                Random R = new Random();
+                
                 Button button1 = new Button();
-                button1.Location = new Point(R.Next(0, 515), 0);
+                button1.Location = new Point(R.Next(0, 515), R.Next(0, 10));
                 button1.Size = new Size(25, 25);
+                button1.FlatStyle = FlatStyle.Flat;
+                button1.BackColor = Color.Green;
                 body.Add(button1);
                 Controls.Add(button1);
             }
@@ -93,13 +91,12 @@ namespace Asteroidy
                 {
                     body[i].Location = new Point(x, y);
                 }
-                else if(y >= btn.Location.Y + 100)
+                else 
                 {
                     score++;
                     body.Remove(body[i]);
                     Controls.Remove(body[i]);
                 }
-                y = body[i].Location.Y;
             }
 
             if (!Collision())

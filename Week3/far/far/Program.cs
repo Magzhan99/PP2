@@ -40,7 +40,7 @@ namespace SimpleFarManager
              {
                  
                  Console.Clear();
-                 ShowState(dir, pos);
+                 ShowState(dir, pos); 
 
                  ConsoleKeyInfo button = Console.ReadKey();
                  switch (button.Key)
